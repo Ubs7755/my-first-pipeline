@@ -16,16 +16,5 @@ jobs:
       run: |
         echo "Hello from the cloud!"
         uname -a
-        whoami
-        pwd
         ls -la
-
-
-        - name: Run Linux Commands
-      run: |
-        echo "Hello from the cloud!"
-        uname -a
-        whoami
-        pwd
-        ls -la
-        fake-command-that-fails  # <--- ADD THIS LINE
+        this-command-does-not-exist  # This will break the build!
