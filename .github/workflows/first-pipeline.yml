@@ -12,9 +12,12 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
       
-    - name: Run Linux Commands
+    - name: Check Google Connectivity
       run: |
-        echo "Hello from the cloud!"
-        uname -a
-        ls -la
-        this-command-does-not-exist  # This will break the build!
+        echo "Starting health check..."
+        
+        # 'curl' is a tool to transfer data. '-I' fetches the headers only.
+        # This simulates checking if a server is responsive.
+        curl -I https://www.google.com
+        
+        echo "Health check passed!"
